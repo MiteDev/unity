@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.ptc.vuforia.engine": "file:C:/Users/user/Desktop/com.ptc.vuforia.engine",
+    "com.ptc.vuforia.engine": "file:C:/Users/pinka/Downloads/com.ptc.vuforia.engine (2)",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ide.rider": "1.1.4",
     "com.unity.ide.vscode": "1.2.3",

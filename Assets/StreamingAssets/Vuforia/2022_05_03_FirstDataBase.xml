@@ -1,30 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="Paper" size="300.000000 400.000000" />
-    <ImageTarget name="Rock" size="300.000000 400.000000" />
-    <ImageTarget name="Scissor" size="300.000000 400.000000" />
-    <ImageTarget name="Picture02" size="564.000000 374.000000" />
-    <ImageTarget name="Picture01" size="578.000000 383.000000" />
-    <ImageTarget name="image_onebbul02" size="223.000000 226.000000" />
-    <ImageTarget name="image_wheel04" size="1781.000000 1002.000000" />
-    <ImageTarget name="image_wheel03" size="452.000000 452.000000" />
-    <ImageTarget name="image_headphone04" size="850.000000 995.000000" />
-    <ImageTarget name="image_headphone03" size="274.000000 184.000000" />
-    <ImageTarget name="image_headphone02" size="679.000000 679.000000" />
-    <ImageTarget name="image_circle01" size="500.000000 500.000000" />
-    <ImageTarget name="image_balls" size="225.000000 225.000000" />
-    <ImageTarget name="image_pizza" size="255.000000 169.690903" />
-    <ImageTarget name="image_grape" size="500.000000 407.000000" />
-    <ImageTarget name="image_wheel" size="225.000000 225.000000" />
-    <ImageTarget name="image_car" size="612.000000 358.000000" />
-    <ImageTarget name="image_watch" size="300.000000 348.000000" />
-    <ImageTarget name="image_seesaw" size="1900.000000 1266.000000" />
-    <ImageTarget name="image_chicken" size="760.000000 500.000000" />
-    <ImageTarget name="image_phone" size="940.000000 1112.000000" />
-    <ImageTarget name="book03" size="225.000000 304.649994" />
-    <ImageTarget name="book02" size="225.000000 346.924072" />
-    <ImageTarget name="book01" size="225.000000 316.011230" />
-    <CylinderTarget name="SODA" sideLength="549.000000"/>
+    <ImageTarget name="Scissor02" size="458.000000 591.893250" />
+    <ImageTarget name="Rock02" size="458.000000 648.639587" />
+    <ImageTarget name="Paper02" size="458.000000 646.000000" />
   </Tracking>
 </QCARConfig>
