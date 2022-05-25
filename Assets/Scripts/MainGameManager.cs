@@ -14,8 +14,13 @@ public class MainGameManager : MonoBehaviour
     }
     private NowState nowState = 0;
 
+    // 카드 인식 일시 정지
+    private bool isGameOn = true;
+
     // 현재 게임 진행 상태를 보여줄 텍스트
     public Text nowStateText;
+    public Text player01WonRoundNum_Text;
+    public Text player02WonRoundNum_Text;
 
     // 플레이어들이 낸 카드를 저장할 변수
     // 0 = 가위, 1 = 바위, 2 = 보
@@ -26,23 +31,36 @@ public class MainGameManager : MonoBehaviour
     private int player01WonRoundNum = 0;
     private int player02WonRoundNum = 0;
 
+    // 최종 결과 창
+    public GameObject Canvas_Result;
+
     void Start()
     {
         nowStateText.text = "플레이어1의 차례입니다.";
+        Canvas_Result.SetActive(false);
+    }
+
+    private void Update()
+    {
+        player01WonRoundNum_Text.text = player01WonRoundNum.ToString();
+        player02WonRoundNum_Text.text = player02WonRoundNum.ToString();
     }
 
     // 카드가 인식 되면 값을 전달받는 메소드
     public void FilpCard(int _inputCard)
     {
-        SetPlayersCard(_inputCard);
-        SetMessage();
-        Debug.Log("Flipcard_Called");
+        Debug.Log("not in if");
+        if (isGameOn)
+        {
+            Debug.Log("in if");
+            SetPlayersCard(_inputCard);
+            SetMessage();
+        }
     }
 
     // 해당 턴인 플레이어의 카드를 설정
     private void SetPlayersCard(int _pCard)
     {
-        Debug.Log("SetPlayersCardCalled");
         if ((int)nowState == 0)
         {
             player01Card = _pCard;
@@ -114,9 +132,6 @@ public class MainGameManager : MonoBehaviour
         }
 
         ApplyRoundWinner(winner);
-
-
-        nowState = 0;
     }
 
     // 이긴 플레이어의 메시지를 출력하고
@@ -141,5 +156,52 @@ public class MainGameManager : MonoBehaviour
             player01WonRoundNum++;
             player02WonRoundNum++;
         }
+
+        FindFinalWinner();
+    }
+
+    private void FindFinalWinner()
+    {
+        bool isGameOver = false;
+
+        // 마지막 라운드에 비겨서 2대2로 끝남
+        if (player01WonRoundNum >= 2 && player02WonRoundNum >= 2)
+        {
+            nowStateText.text = "최종 결과: 비김";
+            isGameOver = true;
+        }
+        // 플레이어1 최종 승리
+        else if (player01WonRoundNum >= 2)
+        {
+            nowStateText.text = "최종 결과: 플레이어 1 승리";
+            isGameOver = true;
+        }
+        // 플레이어2 최종 승리
+        else if(player02WonRoundNum >= 2)
+        {
+            nowStateText.text = "최종 결과: 플레이어 2 승리";
+            isGameOver = true;
+        }
+
+        if (isGameOver)
+        {
+            isGameOn = false;
+            // 최종게임 결과 화면
+            Canvas_Result.SetActive(true);
+        }
+        else
+        {
+            nowState = 0;
+            // 2초 정도 후에 다음 라운드 시작하는 코루틴 넣으면 좋을듯??
+        }
+    }
+
+    public void ResetGame()
+    {
+        isGameOn = true;
+        nowState = 0;
+        player01WonRoundNum = 0;
+        player02WonRoundNum = 0;
+        SetMessage();
     }
 }
