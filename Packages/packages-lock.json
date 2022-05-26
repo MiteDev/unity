@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.ptc.vuforia.engine": {
-      "version": "file:C:/Users/user/Desktop/com.ptc.vuforia.engine",
+      "version": "file:C:/Users/ddong/Desktop/com.ptc.vuforia.engine (2)",
       "depth": 0,
       "source": "local",
       "dependencies": {
